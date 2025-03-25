@@ -1,0 +1,67 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROT13 Cipher</title>
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f4;
+                margin: 0;
+                padding: 20px;
+            }
+
+            .container {
+                max-width: 600px;
+                margin: auto;
+                background: white;
+                padding: 20px;
+                border-radius: 5px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+
+            h1 {
+                text-align: center;
+            }
+
+            textarea {
+                width: 100%;
+                margin-bottom: 10px;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+            }
+
+            button {
+                display: block;
+                width: 100%;
+                padding: 10px;
+                background-color: #5cb85c;
+                color: white;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+
+            button:hover {
+                background-color: #4cae4c;
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>ROT13 Cipher</h1>
+        <form method="POST">
+            <textarea name="input_text" rows="10" cols="50" placeholder="Enter text here...">{{ input_text }}</textarea><br>
+            <button type="submit">Encrypt/Decrypt</button>
+        </form>
+        <h2>Output:</h2>
+        <textarea rows="10" cols="50" readonly>{{ output_text }}</textarea>
+    </div>
+</body>
+</html>
